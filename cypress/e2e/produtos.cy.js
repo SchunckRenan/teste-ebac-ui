@@ -28,8 +28,6 @@ describe('Funcionalidade Página de produtos', () => {
             .click()
         cy.get('.button-variable-item-Red')
             .click()
-        cy.get('.button-variable-item-XL') ///Enjambre detected!
-            .click()
         cy.get('.input-text')
             .clear()
             .type(quant)
@@ -44,6 +42,3 @@ describe('Funcionalidade Página de produtos', () => {
     });
 
 })
-///Um enjambre foi adicionado, pois o teste automatizado não funcionava sem este passo a mais.
-///Após escolher o tamanho do produto, a descrição dele aparecia na tela, fazendo com que o teste deixasse de funcionar corretamente.
-///A solução provisória que encntrei foi refazer o passo após adicionar a cor do produto.
