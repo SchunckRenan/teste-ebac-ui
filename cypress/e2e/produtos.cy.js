@@ -1,19 +1,15 @@
 /// <reference types="cypress" />
+import produtosPage from "../support/page-objects/produtos.page";
 
 describe('Funcionalidade Página de produtos', () => {
 
     beforeEach(() => {
-        cy.visit('/produtos/')
+        produtosPage.visitaUrl()
     });
 
     it('Deve selecionar um da lista', () => {
-        cy.get('[class="product-block grid"]')
-            ///.first() Seleciona o primeiro item da lista
-            ///.last() Seleciona o último item da lista
-            ///.eq(3) É usado para escolher a posição específica de uma lista de 0 a 99999(0=1, 1=2, 2=3...)
-            ///.contains('Ariel Roll Sleeve Sweatshirt') Busca um item pelo nome contido no elemento.
-            .first()
-            .click()
+        produtosPage.buscarProdutoLista('Aero Daily Fitness Tee')
+        cy.get('#tab-title-description > a').should('contain', 'Descrição')
 
     });
 
@@ -39,6 +35,20 @@ describe('Funcionalidade Página de produtos', () => {
         cy.get('.woocommerce-message')
             .should('contain', quant + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
 
+    });
+
+    it.only('Deve buscar um produto com sucesso', () => {
+        let produto = 'Aether Gym Pant'
+        produtosPage.buscarProduto(produto)
+        cy.get('.product_title').should('contain', produto)
+    });
+
+    it('Deve buscar um produto com sucesso', () => {
+        
+    });
+
+    it('Deve adicionar um produto ao carrinho', () => {
+        
     });
 
 })
