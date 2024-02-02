@@ -17,7 +17,7 @@ describe('Funcionalidade Página de produtos', () => {
 
     });
 
-    it.only('Deve adicionar um produto ao carrinho', () => {
+    it('Deve adicionar um produto ao carrinho', () => {
 
         var quant = 5
 
