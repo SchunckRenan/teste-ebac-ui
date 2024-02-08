@@ -1,0 +1,14 @@
+[
+    {
+        "nomeProduto": "Aero Daily Fitness Tee",
+        "tamanho": "XS",
+        "cor": "Black",
+        "qtd": 3
+    },
+    {
+        "nomeProduto": "Apollo Running Short",
+        "tamanho": 34,
+        "cor": "Black",
+        "qtd": 5
+    }
+]
